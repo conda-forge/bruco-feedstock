@@ -10,7 +10,7 @@ source:
   sha256: 999761de5c7ed8dee17efc91ef2d463a7f3407bef95e5b117b7f3fb76473d7c0
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
@@ -22,7 +22,7 @@ requirements:
   run:
     - gwdatafind
     - gwpy
-    - matplotlib
+    - matplotlib-base
     - numpy
     - python
     - scipy
