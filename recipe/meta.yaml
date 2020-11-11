@@ -22,7 +22,7 @@ requirements:
   run:
     - gwdatafind
     - gwpy
-    - matplotlib-base
+    - matplotlib-base <3.3.0a0
     - numpy
     - python
     - scipy
