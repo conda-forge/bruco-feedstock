@@ -28,11 +28,14 @@ requirements:
     - scipy
 
 test:
+  requires:
+    - pip
   imports:
     - bruco
   commands:
     - python -m bruco --help
     - bruco --help
+    - pip check
 
 about:
   home: https://git.ligo.org/gabriele-vajente/bruco
