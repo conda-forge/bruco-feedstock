@@ -1,5 +1,5 @@
 {% set name = "bruco" %}
-{% set version = "0.1.2" %}
+{% set version = "0.1.4" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 999761de5c7ed8dee17efc91ef2d463a7f3407bef95e5b117b7f3fb76473d7c0
+  sha256: ea8a148b5074bdf1df21a690e4dd465f97b3096187f04478b319748aad1f19f7
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
 
@@ -22,7 +22,7 @@ requirements:
   run:
     - gwdatafind
     - gwpy
-    - matplotlib-base <3.3.0a0
+    - matplotlib-base
     - numpy
     - python
     - scipy
