@@ -2,8 +2,8 @@
 {% set version = "0.1.5" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   skip: true  # [win]
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -33,9 +33,11 @@ test:
   imports:
     - bruco
   commands:
+    # check requirements
+    - python -m pip check
+    # check command-line interface
     - python -m bruco --help
     - bruco --help
-    - pip check
 
 about:
   home: https://git.ligo.org/gabriele-vajente/bruco
