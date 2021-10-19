@@ -1,20 +1,23 @@
 {% set name = "bruco" %}
-{% set version = "0.1.4" %}
+{% set version = "0.1.5" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ea8a148b5074bdf1df21a690e4dd465f97b3096187f04478b319748aad1f19f7
+  sha256: c6b22e51b8ae9076f06838a38f119fd362babf680ecf720f54bdfb20aae0446f
 
 build:
   number: 0
-  skip: true  # [win]
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
+  build:
+    # extras for cross-compilation
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+    - python                              # [build_platform != target_platform]
   host:
     - pip
     - python
@@ -33,9 +36,11 @@ test:
   imports:
     - bruco
   commands:
+    # check requirements
+    - python -m pip check
+    # check command-line interface
     - python -m bruco --help
-    - bruco --help
-    - pip check
+    - bruco --help  # [unix]
 
 about:
   home: https://git.ligo.org/gabriele-vajente/bruco
