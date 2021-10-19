@@ -36,7 +36,7 @@ test:
     - python -m pip check
     # check command-line interface
     - python -m bruco --help
-    - bruco --help
+    - bruco --help  # [unix]
 
 about:
   home: https://git.ligo.org/gabriele-vajente/bruco
