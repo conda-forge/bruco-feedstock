@@ -8,6 +8,9 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 4ddf2f1b6d03b8051cba896c80c62babe6c0d89fdbe52470fc564f88fe628167
+  patches:
+    # fix requirements, see https://git.ligo.org/gabriele-vajente/bruco/-/issues/18
+    - requirements.patch
 
 build:
   number: 0
