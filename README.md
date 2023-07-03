@@ -1,11 +1,11 @@
-About bruco
-===========
+About bruco-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bruco-feedstock/blob/main/LICENSE.txt)
 
 Home: https://git.ligo.org/gabriele-vajente/bruco
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/bruco-feedstock/blob/main/LICENSE.txt)
 
 Summary: Brute force coherence
 
